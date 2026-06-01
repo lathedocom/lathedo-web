@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lathedo - Tối ưu công việc bằng công cụ thông minh</title>
+    <title>Lathedo Studio - Công cụ giúp bạn học tập và làm việc hiệu quả hơn</title>
     <link rel="icon" type="image/png" href="ltd.png">
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -27,21 +28,6 @@
             --cta-hover: #1557B0;
         }
 
-        /* --- Hệ thống Biến số Màu sắc (Chế độ Tối) --- */
-        [data-theme="dark"] {
-            --primary-color: #64B5F6;
-            --primary-dark: #90CAF9;
-            --text-main: #E8EAED;
-            --text-light: #9AA0A6;
-            --bg-white: #202124; 
-            --section-bg-alt: #292A2D; 
-            --toolbar-bg: #202124;
-            --card-bg: #2D2E31;
-            --border-color: #3C4043;
-            --shadow-color: rgba(0,0,0,0.4);
-            --accent-color: #FFCA28;
-        }
-
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -50,7 +36,6 @@
             color: var(--text-main);
             padding-top: 64px;
             line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         /* --- Toolbar --- */
@@ -68,7 +53,6 @@
             padding: 0 24px;
             box-sizing: border-box;
             z-index: 1000;
-            transition: background-color 0.3s ease;
         }
 
         .toolbar-logo {
@@ -90,24 +74,6 @@
             display: flex;
             align-items: center;
             gap: 12px;
-        }
-
-        /* Nút đổi giao diện (Sáng/Tối) */
-        .icon-btn {
-            background: transparent;
-            border: none;
-            color: var(--text-light);
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-        }
-        .icon-btn:hover {
-            background-color: var(--section-bg-alt);
-            color: var(--primary-color);
         }
 
         /* Nút chuyển đổi ngôn ngữ */
@@ -302,7 +268,6 @@
             border-top: 1px solid var(--border-color);
             color: var(--text-light);
             font-size: 14px;
-            transition: background-color 0.3s ease;
         }
     </style>
 </head>
@@ -310,31 +275,29 @@
 
     <div class="toolbar">
         <a href="#" class="toolbar-logo">
-            <img src="ltd.png" alt="Lathedo Logo"> Lathedo
+            <img src="ltd.png" alt="Lathedo Logo"> Lathedo Studio
         </a>
         <div class="toolbar-actions">
-            <button class="icon-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode" title="Giao diện Sáng/Tối">
-                <i class="material-icons" id="themeIcon">dark_mode</i>
-            </button>
             <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">VI / EN</button>
         </div>
     </div>
 
     <div class="hero-section">
-        <h1 class="hero-title" data-i18n="hero_title">Tối ưu công việc bằng công cụ thông minh</h1>
-        <p class="hero-subtitle" data-i18n="hero_subtitle">Xây dựng nền tảng giúp bạn ghi nhớ hiệu quả và quản lý việc học một cách khoa học, tiết kiệm thời gian và công sức.</p>
+        <h1 class="hero-title" data-i18n="hero_title">Công cụ giúp bạn học tập và làm việc hiệu quả hơn</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">Lathedo phát triển các ứng dụng tập trung vào ghi chú, quản lý tri thức và nâng cao năng suất cá nhân.</p>
     </div>
 
     <div class="section-wrapper">
-        <h2 class="section-title" data-i18n="section_title">GinoNote</h2>
+        <h2 class="section-title" data-i18n="section_title">Sản phẩm</h2>
         
         <div class="project-grid">
+            <!-- GinoNote Android Card -->
             <div class="project-card">
                 <div class="project-card-header blue"></div>
                 <div class="project-card-body">
                     <img src="gino.png" alt="GinoNote Logo" class="project-img-icon">
-                    <h3 class="project-title">📱 GinoNote App</h3>
-                    <p class="project-desc" data-i18n="gino_app_desc">Ghi chú thông minh trên điện thoại.<br>Áp dụng Active Recall và Spaced Repetition để giúp bạn ghi nhớ chủ động và lâu dài.</p>
+                    <h3 class="project-title">📱 GinoNote Android</h3>
+                    <p class="project-desc" data-i18n="gino_app_desc">Ứng dụng ghi chú kết hợp ôn tập thông minh, giúp bạn ghi nhớ kiến thức hiệu quả hơn mỗi ngày.</p>
                     <div class="btn-group">
                         <a href="https://gino.lathedo.com/ginonote" class="btn btn-outline">
                             <i class="material-icons">info</i> <span data-i18n="btn_learn_more">Tìm hiểu thêm</span>
@@ -346,12 +309,13 @@
                 </div>
             </div>
 
+            <!-- GinoNote Web Card -->
             <div class="project-card">
                 <div class="project-card-header"></div>
                 <div class="project-card-body">
                     <i class="material-icons project-icon">cloud_sync</i>
-                    <h3 class="project-title">☁️ GinoNote Web Sync</h3>
-                    <p class="project-desc" data-i18n="gino_web_desc">Đồng bộ và quản lý dữ liệu trên nhiều thiết bị.<br>Truy cập và chỉnh sửa ghi chú mọi lúc qua trình duyệt, tích hợp với Google Drive.</p>
+                    <h3 class="project-title">☁️ GinoNote Web</h3>
+                    <p class="project-desc" data-i18n="gino_web_desc">Truy cập và quản lý ghi chú trên trình duyệt với khả năng đồng bộ dữ liệu giữa các thiết bị.</p>
                     <div class="btn-group">
                         <a href="https://gino.lathedo.com" class="btn btn-primary">
                             <i class="material-icons">launch</i> <span data-i18n="btn_open_web">Mở ứng dụng Web</span>
@@ -372,23 +336,23 @@
     <script>
         const translations = {
             "vi": {
-                "hero_title": "Tối ưu công việc bằng công cụ thông minh",
-                "hero_subtitle": "Xây dựng nền tảng giúp bạn ghi nhớ hiệu quả và quản lý việc học một cách khoa học, tiết kiệm thời gian và công sức.",
-                "section_title": "GinoNote",
-                "gino_app_desc": "Ghi chú thông minh trên điện thoại.<br>Áp dụng Active Recall và Spaced Repetition để giúp bạn ghi nhớ chủ động và lâu dài.",
+                "hero_title": "Công cụ giúp bạn học tập và làm việc hiệu quả hơn",
+                "hero_subtitle": "Lathedo phát triển các ứng dụng tập trung vào ghi chú, quản lý tri thức và nâng cao năng suất cá nhân.",
+                "section_title": "Sản phẩm",
+                "gino_app_desc": "Ứng dụng ghi chú kết hợp ôn tập thông minh, giúp bạn ghi nhớ kiến thức hiệu quả hơn mỗi ngày.",
                 "btn_learn_more": "Tìm hiểu thêm",
                 "btn_download": "Tải ứng dụng",
-                "gino_web_desc": "Đồng bộ và quản lý dữ liệu trên nhiều thiết bị.<br>Truy cập và chỉnh sửa ghi chú mọi lúc qua trình duyệt, tích hợp với Google Drive.",
+                "gino_web_desc": "Truy cập và quản lý ghi chú trên trình duyệt với khả năng đồng bộ dữ liệu giữa các thiết bị.",
                 "btn_open_web": "Mở ứng dụng Web"
             },
             "en": {
-                "hero_title": "Optimize work with smart tools",
-                "hero_subtitle": "Building platforms to help you memorize effectively and manage learning scientifically, saving time and effort.",
-                "section_title": "GinoNote",
-                "gino_app_desc": "Smart note-taking on mobile.<br>Applying Active Recall and Spaced Repetition to help you memorize actively and long-term.",
+                "hero_title": "Build Knowledge. Work Smarter.",
+                "hero_subtitle": "Lathedo creates tools for note-taking, learning, and personal knowledge management.",
+                "section_title": "Products",
+                "gino_app_desc": "A smart note-taking and review app that helps you remember knowledge more effectively every day.",
                 "btn_learn_more": "Learn more",
                 "btn_download": "Download App",
-                "gino_web_desc": "Sync and manage data across multiple devices.<br>Access and edit notes anytime via browser, integrated with Google Drive.",
+                "gino_web_desc": "Access and manage notes on your browser with seamless data synchronization across devices.",
                 "btn_open_web": "Open Web App"
             }
         };
@@ -410,48 +374,6 @@
             // Đổi nhãn nút bấm
             document.getElementById("langToggle").innerText = currentLang === "vi" ? "VI / EN" : "EN / VI";
         }
-
-        // --- Xử lý Giao diện Sáng / Tối (Đồng bộ với Trình duyệt/OS) ---
-        const prefersDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        const themeIcon = document.getElementById('themeIcon');
-        const htmlEl = document.documentElement;
-
-        function applyTheme(theme) {
-            if (theme === 'dark') {
-                htmlEl.setAttribute('data-theme', 'dark');
-                if(themeIcon) themeIcon.innerText = 'light_mode'; 
-            } else {
-                htmlEl.removeAttribute('data-theme');
-                if(themeIcon) themeIcon.innerText = 'dark_mode'; 
-            }
-        }
-
-        function initTheme() {
-            const savedTheme = localStorage.getItem('lathedo_theme'); // Dùng key chung hoặc riêng
-            if (savedTheme) {
-                applyTheme(savedTheme);
-            } else {
-                applyTheme(prefersDarkQuery.matches ? 'dark' : 'light');
-            }
-        }
-
-        function toggleTheme() {
-            const isCurrentlyDark = htmlEl.getAttribute('data-theme') === 'dark';
-            const newTheme = isCurrentlyDark ? 'light' : 'dark';
-            
-            applyTheme(newTheme);
-            localStorage.setItem('lathedo_theme', newTheme);
-        }
-
-        prefersDarkQuery.addEventListener('change', (e) => {
-            if (!localStorage.getItem('lathedo_theme')) {
-                applyTheme(e.matches ? 'dark' : 'light');
-            }
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            initTheme();
-        });
     </script>
 </body>
 </html>
