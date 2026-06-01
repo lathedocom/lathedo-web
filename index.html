@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lathedo Studio - Công cụ giúp bạn học tập và làm việc hiệu quả hơn</title>
+    <title>Lathedo Studio - Ghi nhớ nhiều hơn. Làm việc thông minh hơn.</title>
     <link rel="icon" type="image/png" href="ltd.png">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+
     <style>
         /* --- Hệ thống Biến số Màu sắc (Chế độ Sáng - Mặc định) --- */
         :root {
@@ -96,30 +95,31 @@
         /* --- Hero Section --- */
         .hero-section {
             text-align: center;
-            padding: 80px 20px;
-            background: linear-gradient(135deg, #0E4B75, #0A3552); /* Giữ màu cố định cho Hero để nổi bật */
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0E4B75, #0A3552);
             color: white;
             margin-bottom: 60px;
             box-shadow: 0 4px 12px var(--shadow-color);
         }
 
         .hero-title {
-            font-size: clamp(28px, 5vw, 42px); 
+            font-size: clamp(32px, 6vw, 48px); 
             font-weight: 700;
-            margin: 0 0 16px 0;
-            line-height: 1.3;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
         }
 
         .hero-subtitle {
-            font-size: clamp(16px, 3vw, 18px); 
+            font-size: clamp(18px, 3vw, 20px); 
             font-weight: 300;
-            max-width: 650px;
+            max-width: 700px;
             margin: 0 auto;
             opacity: 0.9;
             line-height: 1.6;
         }
 
-        /* --- Lưới Sản phẩm --- */
+        /* --- Section Sản phẩm --- */
         .section-wrapper {
             max-width: 1000px;
             margin: 0 auto;
@@ -129,88 +129,83 @@
         .section-title {
             font-size: clamp(24px, 4vw, 32px);
             color: var(--primary-dark);
-            margin-bottom: 32px;
+            margin-bottom: 40px;
             text-align: center;
             font-weight: 700;
         }
 
-        .project-grid {
-            display: grid;
-            grid-template-columns: 1fr; 
-            gap: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .project-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* --- Cards --- */
-        .project-card {
+        /* --- Featured Product Card (Single Card Layout) --- */
+        .featured-project {
+            display: flex;
+            flex-direction: column;
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
             transition: all 0.3s ease;
+            max-width: 850px;
+            margin: 0 auto;
         }
 
-        .project-card:hover {
-            transform: translateY(-8px);
+        .featured-project:hover {
             box-shadow: 0 12px 24px var(--shadow-color);
             border-color: var(--primary-color);
+            transform: translateY(-4px);
         }
 
-        .project-card-header {
+        .featured-project-header {
             height: 6px;
-            background-color: var(--accent-color);
+            background-color: var(--primary-color);
             width: 100%;
         }
 
-        .project-card-header.blue {
-            background-color: var(--primary-color);
-        }
-
-        .project-card-body {
-            padding: 32px 24px;
-            flex-grow: 1;
+        .featured-project-body {
+            padding: 32px;
             display: flex;
             flex-direction: column;
+            gap: 24px;
         }
 
-        .project-icon {
-            font-size: 48px;
-            color: var(--primary-color);
-            margin-bottom: 16px;
+        @media (min-width: 768px) {
+            .featured-project-body {
+                padding: 48px;
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 40px;
+            }
         }
-        
-        .project-img-icon {
-            height: 56px;
+
+        .featured-project-icon-wrapper {
+            flex-shrink: 0;
+        }
+
+        .featured-project-icon-wrapper img {
+            height: 80px;
             width: auto;
-            margin-bottom: 16px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            /* Chống méo ảnh */
-            align-self: flex-start;
-            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .project-title {
-            font-size: 22px;
-            font-weight: 700;
-            margin: 0 0 12px 0;
-            color: var(--primary-dark);
-        }
-
-        .project-desc {
-            color: var(--text-light);
-            font-size: 15px;
-            line-height: 1.6;
-            margin-bottom: 32px;
+        .featured-project-content {
             flex-grow: 1;
+        }
+
+        .featured-project-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin: 0 0 12px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .featured-project-desc {
+            color: var(--text-light);
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 0 0 32px 0;
         }
 
         /* --- Buttons --- */
@@ -230,12 +225,7 @@
             font-weight: 500;
             font-size: 14px;
             transition: all 0.3s ease;
-            flex: 1;
             justify-content: center;
-        }
-
-        @media (min-width: 480px) {
-            .btn { flex: none; } 
         }
 
         .btn-primary {
@@ -263,7 +253,7 @@
         /* --- Footer --- */
         .footer {
             text-align: center;
-            padding: 30px 24px;
+            padding: 40px 24px;
             background-color: var(--bg-white);
             border-top: 1px solid var(--border-color);
             color: var(--text-light);
@@ -273,107 +263,101 @@
 </head>
 <body>
 
-    <div class="toolbar">
-        <a href="#" class="toolbar-logo">
-            <img src="ltd.png" alt="Lathedo Logo"> Lathedo Studio
-        </a>
-        <div class="toolbar-actions">
-            <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">VI / EN</button>
-        </div>
+<div class="toolbar">
+    <a href="#" class="toolbar-logo">
+        <img src="ltd.png" alt="Lathedo Logo"> Lathedo Studio
+    </a>
+    <div class="toolbar-actions">
+        <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">VI / EN</button>
     </div>
+</div>
 
-    <div class="hero-section">
-        <h1 class="hero-title" data-i18n="hero_title">Công cụ giúp bạn học tập và làm việc hiệu quả hơn</h1>
-        <p class="hero-subtitle" data-i18n="hero_subtitle">Lathedo phát triển các ứng dụng tập trung vào ghi chú, quản lý tri thức và nâng cao năng suất cá nhân.</p>
-    </div>
+<div class="hero-section">
+    <h1 class="hero-title" data-i18n="hero_title">Ghi nhớ nhiều hơn. Làm việc thông minh hơn.</h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Lathedo xây dựng các công cụ giúp bạn ghi chú, học tập và quản lý kiến thức hiệu quả trong cuộc sống hằng ngày.</p>
+</div>
 
-    <div class="section-wrapper">
-        <h2 class="section-title" data-i18n="section_title">Sản phẩm</h2>
-        
-        <div class="project-grid">
-            <!-- GinoNote Android Card -->
-            <div class="project-card">
-                <div class="project-card-header blue"></div>
-                <div class="project-card-body">
-                    <img src="gino.png" alt="GinoNote Logo" class="project-img-icon">
-                    <h3 class="project-title">📱 GinoNote Android</h3>
-                    <p class="project-desc" data-i18n="gino_app_desc">Ứng dụng ghi chú kết hợp ôn tập thông minh, giúp bạn ghi nhớ kiến thức hiệu quả hơn mỗi ngày.</p>
-                    <div class="btn-group">
-                        <a href="https://gino.lathedo.com/ginonote" class="btn btn-outline">
-                            <i class="material-icons">info</i> <span data-i18n="btn_learn_more">Tìm hiểu thêm</span>
-                        </a>
-                        <a href="https://play.google.com/store/apps/details?id=com.lathedo.ginonote" class="btn btn-primary" target="_blank">
-                            <i class="material-icons">shop</i> <span data-i18n="btn_download">Tải ứng dụng</span>
-                        </a>
-                    </div>
-                </div>
+<div class="section-wrapper">
+    <h2 class="section-title" data-i18n="section_title">Sản phẩm</h2>
+
+    <div class="featured-project">
+        <div class="featured-project-header"></div>
+        <div class="featured-project-body">
+            <div class="featured-project-icon-wrapper">
+                <img src="gino.png" alt="GinoNote Logo">
             </div>
-
-            <!-- GinoNote Web Card -->
-            <div class="project-card">
-                <div class="project-card-header"></div>
-                <div class="project-card-body">
-                    <i class="material-icons project-icon">cloud_sync</i>
-                    <h3 class="project-title">☁️ GinoNote Web</h3>
-                    <p class="project-desc" data-i18n="gino_web_desc">Truy cập và quản lý ghi chú trên trình duyệt với khả năng đồng bộ dữ liệu giữa các thiết bị.</p>
-                    <div class="btn-group">
-                        <a href="https://gino.lathedo.com" class="btn btn-primary">
-                            <i class="material-icons">launch</i> <span data-i18n="btn_open_web">Mở ứng dụng Web</span>
-                        </a>
-                    </div>
+            <div class="featured-project-content">
+                <h3 class="featured-project-title">GinoNote</h3>
+                <p class="featured-project-desc" data-i18n="gino_desc">
+                    Biến ghi chú thành kiến thức thực sự được ghi nhớ. Ghi chú, ôn tập và học tập hiệu quả với Active Recall và Spaced Repetition. Dữ liệu của bạn được đồng bộ và có thể truy cập mọi lúc, mọi nơi.
+                </p>
+                <div class="btn-group">
+                    <a href="https://play.google.com/store/apps/details?id=com.lathedo.ginonote" class="btn btn-primary" target="_blank">
+                        <i class="material-icons">android</i> <span data-i18n="btn_android">Tải trên Google Play</span>
+                    </a>
+                    <a href="https://gino.lathedo.com" class="btn btn-primary">
+                        <i class="material-icons">language</i> <span data-i18n="btn_web">Mở Web App</span>
+                    </a>
+                    <a href="https://gino.lathedo.com/ginonote" class="btn btn-outline">
+                        <i class="material-icons">info_outline</i> <span data-i18n="btn_learn_more">Tìm hiểu thêm</span>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="footer">
-        <p>&copy; 2026 Lathedo Studio. All rights reserved.</p>
-        <div style="margin-top: 12px;">
-            <img src="ltd.png" alt="Lathedo Logo" style="height: 32px; width: auto; object-fit: contain; vertical-align: middle; opacity: 0.8;">
-        </div>
+<div class="footer">
+    <p>&copy; 2026 Lathedo Studio. All rights reserved.</p>
+    <div style="margin-top: 12px;">
+        <img src="ltd.png" alt="Lathedo Logo" style="height: 32px; width: auto; object-fit: contain; vertical-align: middle; opacity: 0.8;">
     </div>
+</div>
 
-    <script>
-        const translations = {
-            "vi": {
-                "hero_title": "Công cụ giúp bạn học tập và làm việc hiệu quả hơn",
-                "hero_subtitle": "Lathedo phát triển các ứng dụng tập trung vào ghi chú, quản lý tri thức và nâng cao năng suất cá nhân.",
-                "section_title": "Sản phẩm",
-                "gino_app_desc": "Ứng dụng ghi chú kết hợp ôn tập thông minh, giúp bạn ghi nhớ kiến thức hiệu quả hơn mỗi ngày.",
-                "btn_learn_more": "Tìm hiểu thêm",
-                "btn_download": "Tải ứng dụng",
-                "gino_web_desc": "Truy cập và quản lý ghi chú trên trình duyệt với khả năng đồng bộ dữ liệu giữa các thiết bị.",
-                "btn_open_web": "Mở ứng dụng Web"
-            },
-            "en": {
-                "hero_title": "Build Knowledge. Work Smarter.",
-                "hero_subtitle": "Lathedo creates tools for note-taking, learning, and personal knowledge management.",
-                "section_title": "Products",
-                "gino_app_desc": "A smart note-taking and review app that helps you remember knowledge more effectively every day.",
-                "btn_learn_more": "Learn more",
-                "btn_download": "Download App",
-                "gino_web_desc": "Access and manage notes on your browser with seamless data synchronization across devices.",
-                "btn_open_web": "Open Web App"
-            }
-        };
-
-        let currentLang = "vi";
-
-        function toggleLanguage() {
-            currentLang = currentLang === "vi" ? "en" : "vi";
-            
-            // Cập nhật text
-            const elements = document.querySelectorAll("[data-i18n]");
-            elements.forEach(element => {
-                const key = element.getAttribute("data-i18n");
-                if (translations[currentLang][key]) {
-                    element.innerHTML = translations[currentLang][key];
-                }
-            });
-            
-            // Đổi nhãn nút bấm
-            document.getElementById("langToggle").innerText = currentLang === "vi" ? "VI / EN" : "EN / VI";
+<script>
+    const translations = {
+        "vi": {
+            "hero_title": "Ghi nhớ nhiều hơn. Làm việc thông minh hơn.",
+            "hero_subtitle": "Lathedo xây dựng các công cụ giúp bạn ghi chú, học tập và quản lý kiến thức hiệu quả trong cuộc sống hằng ngày.",
+            "section_title": "Sản phẩm",
+            "gino_desc": "Biến ghi chú thành kiến thức thực sự được ghi nhớ. Ghi chú, ôn tập và học tập hiệu quả với Active Recall và Spaced Repetition. Dữ liệu của bạn được đồng bộ và có thể truy cập mọi lúc, mọi nơi.",
+            "btn_android": "Tải trên Google Play",
+            "btn_web": "Mở Web App",
+            "btn_learn_more": "Tìm hiểu thêm"
+        },
+        "en": {
+            "hero_title": "Build Knowledge. Remember More.",
+            "hero_subtitle": "Tools for note-taking, learning, and personal knowledge management.",
+            "section_title": "Products",
+            "gino_desc": "Capture ideas. Review smarter. Remember longer. Your notes, synced and accessible anywhere across Android and the Web.",
+            "btn_android": "Get on Google Play",
+            "btn_web": "Open Web App",
+            "btn_learn_more": "Learn more"
         }
-    </script>
+    };
+
+    let currentLang = "vi";
+
+    function toggleLanguage() {
+        currentLang = currentLang === "vi" ? "en" : "vi";
+
+        // Cập nhật text
+        const elements = document.querySelectorAll("[data-i18n]");
+        elements.forEach(element => {
+            const key = element.getAttribute("data-i18n");
+            if (translations[currentLang][key]) {
+                element.innerHTML = translations[currentLang][key];
+            }
+        });
+
+        // Đổi nhãn nút bấm
+        document.getElementById("langToggle").innerText = currentLang === "vi" ? "VI / EN" : "EN / VI";
+
+        // Cập nhật title trình duyệt
+        document.title = currentLang === "vi"
+            ? "Lathedo Studio - Ghi nhớ nhiều hơn. Làm việc thông minh hơn."
+            : "Lathedo Studio - Build Knowledge. Remember More.";
+    }
+</script>
 </body>
 </html>
