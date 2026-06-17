@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lathedo Studio - Ghi nhớ nhiều hơn. Làm việc thông minh hơn.</title>
+    <title>Lathedo - Những tiến bộ bền vững bắt đầu từ phương pháp đúng đắn.</title>
     <link rel="icon" type="image/png" href="ltd.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -259,13 +259,35 @@
             color: var(--text-light);
             font-size: 14px;
         }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: var(--text-light);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
 
 <div class="toolbar">
     <a href="#" class="toolbar-logo">
-        <img src="ltd.png" alt="Lathedo Logo"> Lathedo Studio
+        <img src="ltd.png" alt="Lathedo Logo"> Lathedo
     </a>
     <div class="toolbar-actions">
         <button class="lang-btn" id="langToggle" onclick="toggleLanguage()">VI / EN</button>
@@ -273,8 +295,8 @@
 </div>
 
 <div class="hero-section">
-    <h1 class="hero-title" data-i18n="hero_title">Ghi nhớ nhiều hơn. Làm việc thông minh hơn.</h1>
-    <p class="hero-subtitle" data-i18n="hero_subtitle">Lathedo xây dựng các công cụ giúp bạn ghi chú, học tập và quản lý kiến thức hiệu quả trong cuộc sống hằng ngày.</p>
+    <h1 class="hero-title" data-i18n="hero_title">Những tiến bộ bền vững bắt đầu từ phương pháp đúng đắn.</h1>
+    <p class="hero-subtitle" data-i18n="hero_subtitle">Công cụ tốt và phương pháp hiệu quả giúp bạn tiến bộ nhanh hơn với ít nỗ lực hơn.</p>
 </div>
 
 <div class="section-wrapper">
@@ -308,7 +330,15 @@
 </div>
 
 <div class="footer">
-    <p>&copy; 2026 Lathedo Studio. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="mailto:lathedo.taichi@gmail.com" class="footer-link">
+            <i class="material-icons" style="font-size: 18px;">email</i> lathedo.taichi@gmail.com
+        </a>
+        <a href="https://www.youtube.com/@lathedocom" target="_blank" class="footer-link">
+            <i class="material-icons" style="font-size: 18px;">ondemand_video</i> YouTube
+        </a>
+    </div>
+    <p>&copy; 2026 Lathedo. All rights reserved.</p>
     <div style="margin-top: 12px;">
         <img src="ltd.png" alt="Lathedo Logo" style="height: 32px; width: auto; object-fit: contain; vertical-align: middle; opacity: 0.8;">
     </div>
@@ -317,8 +347,8 @@
 <script>
     const translations = {
         "vi": {
-            "hero_title": "Ghi nhớ nhiều hơn. Làm việc thông minh hơn.",
-            "hero_subtitle": "Lathedo xây dựng các công cụ giúp bạn ghi chú, học tập và quản lý kiến thức hiệu quả trong cuộc sống hằng ngày.",
+            "hero_title": "Những tiến bộ bền vững bắt đầu từ phương pháp đúng đắn.",
+            "hero_subtitle": "Công cụ tốt và phương pháp hiệu quả giúp bạn tiến bộ nhanh hơn với ít nỗ lực hơn.",
             "section_title": "Sản phẩm",
             "gino_desc": "Biến ghi chú thành kiến thức thực sự được ghi nhớ. Ghi chú, ôn tập và học tập hiệu quả với Active Recall và Spaced Repetition. Dữ liệu của bạn được đồng bộ và có thể truy cập mọi lúc, mọi nơi.",
             "btn_android": "Tải trên Google Play",
@@ -326,8 +356,8 @@
             "btn_learn_more": "Tìm hiểu thêm"
         },
         "en": {
-            "hero_title": "Build Knowledge. Remember More.",
-            "hero_subtitle": "Tools for note-taking, learning, and personal knowledge management.",
+            "hero_title": "Sustainable progress starts with the right approach.",
+            "hero_subtitle": "The right tools and effective methods help you make faster progress with less effort.",
             "section_title": "Products",
             "gino_desc": "Capture ideas. Review smarter. Remember longer. Your notes, synced and accessible anywhere across Android and the Web.",
             "btn_android": "Get on Google Play",
@@ -355,8 +385,8 @@
 
         // Cập nhật title trình duyệt
         document.title = currentLang === "vi"
-            ? "Lathedo Studio - Ghi nhớ nhiều hơn. Làm việc thông minh hơn."
-            : "Lathedo Studio - Build Knowledge. Remember More.";
+            ? "Lathedo - Những tiến bộ bền vững bắt đầu từ phương pháp đúng đắn."
+            : "Lathedo - Sustainable progress starts with the right approach.";
     }
 </script>
 </body>
